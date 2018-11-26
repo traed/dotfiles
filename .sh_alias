@@ -1,0 +1,17 @@
+# Misc
+alias phpini="php -i | grep -o '/.*/php.ini'"
+alias rc='f() {rm $1; clear};f'
+
+# ls
+alias ll="ls -l"
+alias la="ls -lA"
+alias l="ls -CF"
+
+# Docker
+alias dcup='docker-compose up -d'
+alias dcdown='docker-compose down'
+alias dcstart='docker-compose start'
+alias dcstop='docker-compose stop'
+alias dcre='docker-compose restart'
+alias dcbuild='docker-compose build'
+alias dcsh='f() {if type "docker exec -it ${1} bash -" > /dev/null; then docker exec -it $1 bash -; else docker exec -it $1 sh -; fi};f'
