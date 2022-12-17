@@ -1,6 +1,7 @@
 # Misc
 alias phpini="php -i | grep -o '/.*/php.ini'"
 alias rc='f() {rm $1; clear};f'
+alias gs='git status'
 
 # ls
 alias ll="ls -l"
