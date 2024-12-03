@@ -25,11 +25,15 @@ source $HOMEBREW_PREFIX/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
-export LC_ALL=en_US.UFT-8
+export LC_ALL=en_US.UTF-8
 
 # NVM
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# Flutter
+export PATH=$HOME/dev/flutter/bin:$PATH
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # ls
 alias ll="ls -l"
@@ -39,10 +43,6 @@ alias l="ls -CF"
 alias c="clear"
 
 # Docker
-alias dcup='docker-compose up -d'
-alias dcdown='docker-compose down'
-alias dcstart='docker-compose start'
-alias dcstop='docker-compose stop'
-alias dcre='docker-compose restart'
-alias dcbuild='docker-compose build'
-alias dcsh='f() {if type "docker exec -it ${1} bash -" > /dev/null; then docker exec -it $1 bash -; else docker exec -it $1 sh -; fi};f'
+alias dcup='docker compose up -d'
+alias dcdown='docker compose down'
+alias dps='docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}"'
